@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PageHeader from '../component/PageHeader';
 
 class App extends Component {
     constructor(props) {
@@ -12,13 +13,7 @@ class App extends Component {
     render() {
         return (
             <div className="container">
-                <div className="row">
-                    <div className="col-12">
-                        <header>
-                            <h1 className="text-center">GIF Viewer</h1>
-                        </header>
-                    </div>
-                </div>
+                <PageHeader title='GIF Viewer' />
             </div>
         );
     }

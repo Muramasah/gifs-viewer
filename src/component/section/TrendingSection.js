@@ -9,7 +9,7 @@ import TrendingGifGallery from '../gallery/TrendingGifGallery';
  * @param {integer} props.limit Gifs request limit
  */
 const TrendingSection = ({ limit }) => {
-    return <TrendingGifGallery limit={limit} />
+    return <TrendingGifGallery title='Trending' limit={limit} />
 };
 
 export default TrendingSection;

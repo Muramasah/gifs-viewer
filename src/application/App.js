@@ -18,7 +18,7 @@ class App extends Component {
             <div className="container">
                 <PageHeader title='GIF Viewer' />
                 <TrendingSection limit={10} />
-                <FavoriteSection favoriteIDs={favorites} />
+                <FavoriteSection favoriteIDs={["feqkVgjJpYtjy", "7rzbxdu0ZEXLy"]} />
             </div>
         );
     }

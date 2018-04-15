@@ -105,7 +105,9 @@ class GifGallery extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    {this.gifItemListView(this.state.gifs)}
+                    <div className="col-12 text-center">
+                        {this.gifItemListView(this.state.gifs)}
+                    </div>
                 </div>
             </div>
         );

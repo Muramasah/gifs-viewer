@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 //Helpers
 import { isComponentLoading, setLoadedState } from '../../helper/component';
+import { isArrayEmptyOrUndefined } from '../../helper/array';
 
 const StyledImageItem = styled.img`
     margin: 0.2rem;
@@ -36,9 +37,11 @@ class GifGallery extends Component {
     }
 
     loadGifs({ payload }) {
-        const gifs = payload.data;
+        if (payload) {
+            const gifs = payload.data || [];
 
-        setLoadedState(this, { gifs });
+            setLoadedState(this, { gifs });
+        }
     }
 
     loadingView() {
@@ -48,8 +51,6 @@ class GifGallery extends Component {
     }
 
     gifItemView(gif, index) {
-        /*<div key={index} className="col-6 col-xs-5 col-sm-4 col-md-3">*/
-        /*</div>*/
         return (
             <GifGalleryImageItem
                 key={index}
@@ -62,22 +63,25 @@ class GifGallery extends Component {
         );
     }
 
-    gifItemListView(gifs) {
-        if (gifs) {
-            return gifs.map(this.gifItemView);
+    emptyGalleryView() {
+        const { emptyMessage } = this.props;
+
+        if (emptyMessage) {
+            return (
+                <div className="col-12 text-center">
+                    <h3>{emptyMessage}</h3>
+                </div>
+            );
         }
     }
 
-    galleryView() {
-        return (
-            <div className="col-12 text-center">
-                <div className="row">
-                    <div className="col-12 text-center">
-                        <h2>Trending</h2>
-                    </div>
-                </div>
-                <div className="row">
-                    <div style={{
+    gifItemListView(gifs) {
+        if (isArrayEmptyOrUndefined(gifs)) {
+            return this.emptyGalleryView();
+        } else {
+            return (
+                <div
+                    style={{
                         lineHeight: '0',
                         //WebkitColumCount: '5',
                         WebkitColumnGap: '0px',
@@ -86,6 +90,22 @@ class GifGallery extends Component {
                         //columnCount: '5',
                         columnGap: '0px'
                     }}>
+                    {gifs.map(this.gifItemView)}
+                </div>
+            );
+        }
+    }
+
+    galleryView() {
+        return (
+            <div className="col-12 text-center">
+                <div className="row">
+                    <div className="col-12 text-center">
+                        <h2>{this.props.title}</h2>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-12 text-center">
                         {this.gifItemListView(this.state.gifs)}
                     </div>
                 </div>

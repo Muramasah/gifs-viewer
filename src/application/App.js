@@ -34,10 +34,23 @@ class App extends Component {
 
     loadGifs(payload, gifType) {
         if (payload) {
-            const gifs = payload.data || [];
+            const rawGifs = payload.data || [];
+            const gifs = gifType === 'favorites'
+                ? rawGifs
+                : rawGifs.map(gif => this.addFavoriteFlag.bind(this));
 
             this.setState({ [gifType]: gifs });
         }
+    }
+
+    addFavoriteFlag(gif) {
+        const { favorites } = this.state;
+
+        favorites.forEach(favoriteGif => {
+            gif.isFavorite = favoriteGif.id === gif.id;
+        })
+
+        return gif
     }
 
     onDislike(event) {

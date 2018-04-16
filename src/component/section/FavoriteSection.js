@@ -1,15 +1,22 @@
 //Libraries
 import React from 'react';
 //Components
-import FavoriteGifGallery from '../gallery/FavoriteGifGallery';
+import GifGallery from '../gallery/GifGallery';
+import FavoriteImageItem from '../gallery/image/FavoriteImageItem'
 
 /**
- * TrendingGifGallery
+ * FavoriteSection
  * @param {object} props Properties of the component.
- * @param {array} props.favoriteIDs IDs from the favorite gifs.
+ * @param {array} props.gifs Favorite gifs.
  */
-const FavoriteSection = ({ favoriteIDs = [] }) => {
-    return <FavoriteGifGallery title='Favorites' favoriteIDs={favoriteIDs} />
+const FavoriteSection = ({ gifs, onDislike }) => {
+    return <GifGallery
+        title='Favorites'
+        emptyMessage="Add gifs to favorite to see results here"
+        ImageItem={FavoriteImageItem}
+        onClickButton={onDislike}
+        gifs={gifs}
+    />
 };
 
 export default FavoriteSection;

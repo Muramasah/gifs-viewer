@@ -11,6 +11,10 @@ export const FETCH_TRENDING_GIF = 'fetch_trending_gif';
  */
 export const fetchTrendingGifs = actionCreator('trending', FETCH_TRENDING_GIF);
 
+export const fetchLastTenTreindGifs = async (limit) => {
+    return await fetchTrendingGifs({ limit })
+}
+
 export const FETCH_GIFS_BY_ID = 'fetch_gifs_by_id';
 /**
  * Use: fetchGifsByID({"ids": ["feqkVgjJpYtjy", "7rzbxdu0ZEXLy"]})
@@ -22,7 +26,7 @@ export const fetchGifsByID = actionCreator('gifsByIDs', FETCH_GIFS_BY_ID);
 
 export const FETCH_SEARCH = 'fetch_search';
 /**
- * Use: fetchSearchGifs({"q": "cats"})
+ * Use: fetchSearchGifs({"q": "cats", limit: 20})
  * @returns {promise} Return a promise that retrives a object with the
  * payload and action type.
  * @param {object} options parameters accepted by the search endpoint

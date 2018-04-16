@@ -10,7 +10,7 @@ import TrendingImageItem from '../gallery/image/TrendingImageItem'
  * @param {integer} props.limit Gifs request limit
  */
 const TrendingSection = ({ gifs }) => {
-    return <GifGallery title='Trending' gifs={gifs} imageView={TrendingImageItem} />
+    return <GifGallery title='Trending' gifs={gifs} ImageItem={TrendingImageItem} />
 };
 
 export default TrendingSection;

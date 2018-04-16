@@ -34,21 +34,61 @@ class App extends Component {
 
     loadGifs(payload, gifType) {
         if (payload) {
-            const gifs = payload.data || [];
+            const rawGifs = payload.data || [];
+            const gifs = gifType === 'favorites'
+                ? rawGifs
+                : rawGifs.map(gif => this.addFavoriteFlag.bind(this));
 
             this.setState({ [gifType]: gifs });
         }
     }
 
+    addFavoriteFlag(gif) {
+        const { favorites } = this.state;
+
+        favorites.forEach(favoriteGif => {
+            gif.isFavorite = favoriteGif.id === gif.id;
+        })
+
+        return gif
+    }
+
+    onDislike(event) {
+        const { favorites: oldFavorites } = this.state;
+        const gifID = event.target.id;
+        const favorites = oldFavorites.filter(gif => gif.id !== gifID);
+
+        this.setState({ favorites });
+    }
+
+    onLike(event) {
+        const { favorites: oldFavorites } = this.state;
+        const gifID = event.target.id;
+        const favorites = oldFavorites.filter(gif => gif.id !== gifID);
+
+        this.setState({ favorites });
+    }
+
+    onChangeSearchValue(searchValue) {
+        this.setState({ searchValue });
+    }
+
     render() {
-        const { trending, favorites, results, searchValue } = this.state;
+        const { trending, favorites, results } = this.state;
 
         return (
             <div className="container">
                 <PageHeader title='GIF Viewer' />
                 <TrendingSection gifs={trending} />
-                <FavoriteSection gifs={favorites} />
-                <SearchSection gifs={results} searchValue={searchValue} />
+                <FavoriteSection
+                    gifs={favorites}
+                    onDislike={this.onDislike.bind(this)}
+                />
+                <SearchSection
+                    gifs={results}
+                    onLike={this.onLike.bind(this)}
+                    onChangeSearchValue={this.onChangeSearchValue.bind(this)}
+                />
             </div>
         );
     }

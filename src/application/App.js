@@ -45,18 +45,37 @@ class App extends Component {
         const gifID = event.target.id;
         const favorites = oldFavorites.filter(gif => gif.id !== gifID);
 
-        this.setState({ favorites })
+        this.setState({ favorites });
+    }
+
+    onLike(event) {
+        const { favorites: oldFavorites } = this.state;
+        const gifID = event.target.id;
+        const favorites = oldFavorites.filter(gif => gif.id !== gifID);
+
+        this.setState({ favorites });
+    }
+
+    onChangeSearchValue(searchValue) {
+        this.setState({ searchValue });
     }
 
     render() {
-        const { trending, favorites, results, searchValue } = this.state;
+        const { trending, favorites, results } = this.state;
 
         return (
             <div className="container">
                 <PageHeader title='GIF Viewer' />
                 <TrendingSection gifs={trending} />
-                <FavoriteSection gifs={favorites} onDislike={this.onDislike.bind(this)} />
-                <SearchSection gifs={results} searchValue={searchValue} />
+                <FavoriteSection
+                    gifs={favorites}
+                    onDislike={this.onDislike.bind(this)}
+                />
+                <SearchSection
+                    gifs={results}
+                    onLike={this.onLike.bind(this)}
+                    onChangeSearchValue={this.onChangeSearchValue.bind(this)}
+                />
             </div>
         );
     }

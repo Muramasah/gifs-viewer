@@ -30,8 +30,19 @@ class GifGallery extends Component {
     }
 
     componentDidMount() {
-        this.props
-            .getGifs()
+        this.updateViewData();
+    }
+
+    componentWillReceiveProps({ getGifs }) {
+        if (getGifs !== this.props.getGifs) {
+            this.updateViewData(getGifs);
+        }
+    }
+
+    updateViewData(newGetGifs) {
+        const getGifs = newGetGifs || this.props.getGifs
+
+        getGifs()
             .then(this.loadGifs.bind(this))
             .catch(console.error);
     }

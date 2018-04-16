@@ -40,6 +40,14 @@ class App extends Component {
         }
     }
 
+    onDislike(event) {
+        const { favorites: oldFavorites } = this.state;
+        const gifID = event.target.id;
+        const favorites = oldFavorites.filter(gif => gif.id !== gifID);
+
+        this.setState({ favorites })
+    }
+
     render() {
         const { trending, favorites, results, searchValue } = this.state;
 
@@ -47,7 +55,7 @@ class App extends Component {
             <div className="container">
                 <PageHeader title='GIF Viewer' />
                 <TrendingSection gifs={trending} />
-                <FavoriteSection gifs={favorites} />
+                <FavoriteSection gifs={favorites} onDislike={this.onDislike.bind(this)} />
                 <SearchSection gifs={results} searchValue={searchValue} />
             </div>
         );

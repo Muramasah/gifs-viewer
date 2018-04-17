@@ -7,6 +7,8 @@ import FavoriteSection from '../component/section/FavoriteSection';
 import SearchSection from '../component/section/SearchSection';
 //Actions
 import { fetchLastTenTreindGifs } from '../action/actions';
+//Helpers
+import { isArrayEmptyOrUndefined } from '../helper/array';
 
 class App extends Component {
     constructor(props) {
@@ -26,7 +28,7 @@ class App extends Component {
 
     updateTreindingGifs(limit) {
         fetchLastTenTreindGifs(10)
-            .then(payload => {
+            .then(({ payload }) => {
                 this.loadGifs(payload, 'trending')
             })
             .catch(console.error);
@@ -37,7 +39,7 @@ class App extends Component {
             const rawGifs = payload.data || [];
             const gifs = gifType === 'favorites'
                 ? rawGifs
-                : rawGifs.map(gif => this.addFavoriteFlag.bind(this));
+                : rawGifs.map(this.addFavoriteFlag.bind(this));
 
             this.setState({ [gifType]: gifs });
         }
@@ -45,10 +47,13 @@ class App extends Component {
 
     addFavoriteFlag(gif) {
         const { favorites } = this.state;
-
-        favorites.forEach(favoriteGif => {
-            gif.isFavorite = favoriteGif.id === gif.id;
-        })
+        if (isArrayEmptyOrUndefined(favorites)) {
+            gif.isFavorite = false;
+        } else {
+            favorites.forEach(favoriteGif => {
+                gif.isFavorite = favoriteGif.id === gif.id;
+            });
+        }
 
         return gif
     }
@@ -93,5 +98,7 @@ class App extends Component {
         );
     }
 }
+
+/**/
 
 export default App;

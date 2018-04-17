@@ -12,10 +12,11 @@ const ItemListView = ({ emptyMessage, gifs, ImageItem, onClickButton }) => {
     } else {
         return (
             <StyledItemListView>
-                {gifs.map(gif => {
+                {gifs.map((gif, index) => {
                     const { id, images, slug } = gif;
 
                     return <ImageItem
+                        key={index}
                         id={id}
                         imageUrl={images.downsized_medium.gif_url}
                         slug={slug}

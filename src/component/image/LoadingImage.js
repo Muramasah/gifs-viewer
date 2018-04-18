@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
-    margin: auto;
+    margin: 2rem;
     width: 40px;
     height: 40px;
     position: relative;

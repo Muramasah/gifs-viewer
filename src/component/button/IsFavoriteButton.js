@@ -4,7 +4,7 @@ import FullWidthButton from './presenter/FullWidthButton';
 const IsFavoriteButton = () => {
     return (
         <FullWidthButton>
-            <span>Heart</span>
+            <i className="fas fa-heart"></i>
         </FullWidthButton>
     );
 };

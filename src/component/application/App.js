@@ -23,7 +23,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        fetchLastTreindGifs(10)
+        fetchLastTreindGifs(1)
             .then(({ payload: { gifs } }) => {
                 this.setState({ trending: gifs });
             })

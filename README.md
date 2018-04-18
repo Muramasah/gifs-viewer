@@ -16,6 +16,8 @@ cd gifs-viewer/
 yarn add serve
 
 # Start production server
+# If you have an error try compiling your own build
+# with the devlopment commands to build a new production version
 yarn serve -s build
 
 #DEVELOPMENT COMMANDS

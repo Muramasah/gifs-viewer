@@ -1,4 +1,8 @@
-
+/**
+ * Select an element by id and changes the style
+ * to display: block
+ * @param {string} id 
+ */
 export const showElementByID = (id) => {
     document
         .getElementById(id)
@@ -6,6 +10,11 @@ export const showElementByID = (id) => {
         .display = 'block';
 };
 
+/**
+ * Select an element by id and changes the style
+ * to display: none
+ * @param {string} id 
+ */
 export const hideElementByID = (id) => {
     document
         .getElementById(id)

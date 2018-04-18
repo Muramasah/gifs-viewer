@@ -13,17 +13,7 @@ const giphyApi = GphApiClient(PUBLIC_KEY);
  * @param {string} resourseType Type or resourse needed from the API.
  */
 const getResponsePromise = async (endpoint, parameters, resourseType) => {
-    /**
-     * @todo do a pull request to the SDK library suggesting that the
-     * resourse type must be the second argument or change/create the function
-     * byIDs and accepts the diferent type of resources to keep the consistencie
-     * of the SDK usage.
-     */
-    const needResourseType = endpoint !== 'gifsByIDs';
-
-    return needResourseType
-        ? await giphyApi[endpoint](resourseType, parameters)
-        : await giphyApi[endpoint](parameters);
+    return await giphyApi[endpoint](resourseType, parameters)
 }
 
 /**

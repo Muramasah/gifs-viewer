@@ -1,7 +1,6 @@
 //Library
 import React, { Component } from 'react';
 //Component
-import ItemGalleryButton from '../button/ItemGalleryButton';
 import LoadingImage from './LoadingImage';
 import MiddleInlineDiv from './presenter/MiddleInlineDiv';
 import StyledImageItem from './presenter/StyledImageItem';

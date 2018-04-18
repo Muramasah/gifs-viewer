@@ -1,10 +1,11 @@
 import React from 'react';
+import FullWidthButton from './presenter/FullWidthButton';
 
 const IsFavoriteButton = () => {
     return (
-        <button>
+        <FullWidthButton>
             <span>Heart</span>
-        </button>
+        </FullWidthButton>
     );
 };
 

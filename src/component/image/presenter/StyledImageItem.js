@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledImageItem = styled.img`
+const StyledImage = styled.img`
     margin: 0.2rem;
     width: auto;
     max-width: 100%;
@@ -8,4 +8,4 @@ const StyledImageItem = styled.img`
     object-fit: cover;
 `;
 
-export default StyledImageItem;
+export default StyledImage;

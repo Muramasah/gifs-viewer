@@ -2,28 +2,35 @@
 import React from 'react';
 //Components
 import EmptyGallery from './EmptyGallery';
-import StyledItemListView from './StyledItemListView';
+import NoneColumnGapDiv from './presenter/NoneColumnGapDiv';
 //Helpers
-import { isArrayEmptyOrUndefined } from '../../helper/array';
+import { isObjectEmptyOrUndefined } from '../../helper/object';
+import { generateUiID } from '../../helper/dom';
 
-const ItemListView = ({ emptyMessage, gifs, ImageItem, onClickButton }) => {
-    if (isArrayEmptyOrUndefined(gifs)) {
+const ItemListView = (props) => {
+    const { emptyMessage, gifs, ImageItem, onClickButton } = props;
+
+    if (isObjectEmptyOrUndefined(gifs)) {
         return <EmptyGallery emptyMessage={emptyMessage} />
     } else {
         return (
-            <StyledItemListView>
-                {gifs.map((gif, index) => {
-                    const { id, images, slug } = gif;
+            <NoneColumnGapDiv>
+                {Object.keys(gifs).map((id, index) => {
+                    const gif = gifs[id];
+                    const { slug, url } = gif;
+                    const uiID = generateUiID();
 
                     return <ImageItem
+                        gif={gif}
                         key={index}
                         id={id}
-                        imageUrl={images.downsized_medium.gif_url}
+                        uiID={uiID}
+                        imageUrl={url}
                         slug={slug}
                         onClickButton={onClickButton}
                     />
                 })}
-            </StyledItemListView>
+            </NoneColumnGapDiv>
         );
     }
 }

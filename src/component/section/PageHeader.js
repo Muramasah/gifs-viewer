@@ -1,11 +1,14 @@
 import React from 'react';
+import WhiteTitle from './presenter/WhiteTitle';
 
 const PageHeader = props => {
+    const { title } = props;
+
     return (
         <div className="row">
             <div className="col-12">
                 <header>
-                    <h1 className="text-center">{props.title}</h1>
+                    <WhiteTitle className="text-center">{title}</WhiteTitle>
                 </header>
             </div>
         </div>

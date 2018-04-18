@@ -1,7 +1,8 @@
 //Libraries
 import React, { Component } from 'react';
+import TextCenterInput from './presenter/TextCenterInput';
 
-const INTERVAL = 600;
+const INTERVAL = 800;
 const ENTER_KEY_CODE = 13;
 
 class SearchField extends Component {
@@ -15,16 +16,15 @@ class SearchField extends Component {
         this.triggerSearch = this.triggerSearch.bind(this);
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.timer = null;
     }
 
     onChange(event) {
         clearTimeout(this.timer);
-
-        this.setState({ value: event.target.value });
-
-        this.timer = setTimeout(this.triggerSearch, INTERVAL);
+        this.setState({ value: event.target.value }, () => {
+            this.timer = setTimeout(this.triggerSearch, INTERVAL);
+        });
     }
 
     onKeyDown({ keyCode }) {
@@ -44,7 +44,7 @@ class SearchField extends Component {
         const { value } = this.state;
 
         return (
-            <input
+            <TextCenterInput
                 value={value}
                 placeholder="Search gifs..."
                 onChange={this.onChange.bind(this)}

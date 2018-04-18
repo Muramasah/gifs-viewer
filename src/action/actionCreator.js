@@ -1,5 +1,6 @@
-import { PUBLIC_KEY } from '../configuration/giphy';
 import GphApiClient from 'giphy-js-sdk-core';
+import { PUBLIC_KEY } from '../configuration/giphy';
+import { mapResultGifsToObject } from '../helper/object';
 
 const RESOURSE_TYPE = 'gifs';
 const giphyApi = GphApiClient(PUBLIC_KEY);
@@ -39,7 +40,8 @@ const actionCreator = (endpoint, type = 'unknown', resourseType = RESOURSE_TYPE,
      * the GIPHY API endpoint call.  
      */
     const getActionPromise = async (parameters) => {
-        const payload = await getResponsePromise(endpoint, parameters, resourseType);
+        const response = await getResponsePromise(endpoint, parameters, resourseType);
+        const payload = mapResultGifsToObject(response);
 
         return {
             payload,

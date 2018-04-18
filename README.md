@@ -3,6 +3,8 @@
 Gif viewer using GIPHY API, shows trending gifs, allows to add to favorite ones and is able to do searches.
 
 ## Installation
+In the examples I use yarn, but you can use the npm equivalent commands whitch are no tested.
+
 ```sh
 # Clone the repository
 git clone https://github.com/Muramasah/gifs-viewer.git
@@ -13,26 +15,31 @@ cd gifs-viewer/
 # Install serve.
 yarn add serve
 
-# 
+# Start production server
 yarn serve -s build
 
-#Insta
+#DEVELOPMENT COMMANDS
 
-# Create a configuration file.
-echo '{
-  "source": "./src",
-  "destination": "./docs",
-  "plugins": [{"name": "esdoc-standard-plugin"}]
-}' > .esdoc.json
+#Install dependencies
+yarn
 
-# Run ESDoc.
-./node_modules/.bin/esdoc
+#Generate production build
+yarn build
 
-# View a documentation
-open ./docs/index.html
+#Run development server
+yarn start
+
+#Run test
+yarn test
+
+#Run code coverage
+yarn coverage
+
 ```
 
-## Dependencies
+## Main Dependencies
+See package.json file to see all the dependencies used. This project was built over and ejected react-create-app template. 
+
 -   react: Required by specs, library for building user interfaces.
 -   styled-components: Library to add styles using css and sass features to the componentes.
 -   giphy-js-sdk-core: Wrapper around the GIPHY API.

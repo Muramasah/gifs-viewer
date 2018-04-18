@@ -1,0 +1,314 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemListView renders with FavoriteImageItem without crashing 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ItemListView
+    ImageItem={[Function]}
+    emptyMessage="empty"
+    gifs={
+        Object {
+            "3ohc123V1Dr1nf8lcQ": Object {
+              "id": "3ohc123V1Dr1nf8lcQ",
+              "slug": "dance-cute-bear-3ohc123V1Dr1nf8lcQ",
+              "url": "https://media1.giphy.com/media/3ohc123V1Dr1nf8lcQ/giphy.gif",
+            },
+          }
+    }
+    onClickButton={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <FavoriteImageItem
+          gif={
+                    Object {
+                              "id": "3ohc123V1Dr1nf8lcQ",
+                              "slug": "dance-cute-bear-3ohc123V1Dr1nf8lcQ",
+                              "url": "https://media1.giphy.com/media/3ohc123V1Dr1nf8lcQ/giphy.gif",
+                            }
+          }
+          id="3ohc123V1Dr1nf8lcQ"
+          imageUrl="https://media1.giphy.com/media/3ohc123V1Dr1nf8lcQ/giphy.gif"
+          onClickButton={[Function]}
+          slug="dance-cute-bear-3ohc123V1Dr1nf8lcQ"
+          uiID="poU45wTKf1Qut1XirnOq"
+/>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "0",
+        "nodeType": "function",
+        "props": Object {
+          "gif": Object {
+            "id": "3ohc123V1Dr1nf8lcQ",
+            "slug": "dance-cute-bear-3ohc123V1Dr1nf8lcQ",
+            "url": "https://media1.giphy.com/media/3ohc123V1Dr1nf8lcQ/giphy.gif",
+          },
+          "id": "3ohc123V1Dr1nf8lcQ",
+          "imageUrl": "https://media1.giphy.com/media/3ohc123V1Dr1nf8lcQ/giphy.gif",
+          "onClickButton": [Function],
+          "slug": "dance-cute-bear-3ohc123V1Dr1nf8lcQ",
+          "uiID": "poU45wTKf1Qut1XirnOq",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <FavoriteImageItem
+            gif={
+                        Object {
+                                    "id": "3ohc123V1Dr1nf8lcQ",
+                                    "slug": "dance-cute-bear-3ohc123V1Dr1nf8lcQ",
+                                    "url": "https://media1.giphy.com/media/3ohc123V1Dr1nf8lcQ/giphy.gif",
+                                  }
+            }
+            id="3ohc123V1Dr1nf8lcQ"
+            imageUrl="https://media1.giphy.com/media/3ohc123V1Dr1nf8lcQ/giphy.gif"
+            onClickButton={[Function]}
+            slug="dance-cute-bear-3ohc123V1Dr1nf8lcQ"
+            uiID="poU45wTKf1Qut1XirnOq"
+/>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "0",
+          "nodeType": "function",
+          "props": Object {
+            "gif": Object {
+              "id": "3ohc123V1Dr1nf8lcQ",
+              "slug": "dance-cute-bear-3ohc123V1Dr1nf8lcQ",
+              "url": "https://media1.giphy.com/media/3ohc123V1Dr1nf8lcQ/giphy.gif",
+            },
+            "id": "3ohc123V1Dr1nf8lcQ",
+            "imageUrl": "https://media1.giphy.com/media/3ohc123V1Dr1nf8lcQ/giphy.gif",
+            "onClickButton": [Function],
+            "slug": "dance-cute-bear-3ohc123V1Dr1nf8lcQ",
+            "uiID": "poU45wTKf1Qut1XirnOq",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`ItemListView renders with ResultImageButton without crashing 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ItemListView
+    ImageItem={[Function]}
+    emptyMessage="empty"
+    gifs={
+        Object {
+            "3ohc123V1Dr1nf8lcQ": Object {
+              "id": "3ohc123V1Dr1nf8lcQ",
+              "slug": "dance-cute-bear-3ohc123V1Dr1nf8lcQ",
+              "url": "https://media1.giphy.com/media/3ohc123V1Dr1nf8lcQ/giphy.gif",
+            },
+          }
+    }
+    onClickButton={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <ResultImageItem
+          gif={
+                    Object {
+                              "id": "3ohc123V1Dr1nf8lcQ",
+                              "slug": "dance-cute-bear-3ohc123V1Dr1nf8lcQ",
+                              "url": "https://media1.giphy.com/media/3ohc123V1Dr1nf8lcQ/giphy.gif",
+                            }
+          }
+          id="3ohc123V1Dr1nf8lcQ"
+          imageUrl="https://media1.giphy.com/media/3ohc123V1Dr1nf8lcQ/giphy.gif"
+          onClickButton={[Function]}
+          slug="dance-cute-bear-3ohc123V1Dr1nf8lcQ"
+          uiID="poU45wTKf1Qut1XirnOq"
+/>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "0",
+        "nodeType": "function",
+        "props": Object {
+          "gif": Object {
+            "id": "3ohc123V1Dr1nf8lcQ",
+            "slug": "dance-cute-bear-3ohc123V1Dr1nf8lcQ",
+            "url": "https://media1.giphy.com/media/3ohc123V1Dr1nf8lcQ/giphy.gif",
+          },
+          "id": "3ohc123V1Dr1nf8lcQ",
+          "imageUrl": "https://media1.giphy.com/media/3ohc123V1Dr1nf8lcQ/giphy.gif",
+          "onClickButton": [Function],
+          "slug": "dance-cute-bear-3ohc123V1Dr1nf8lcQ",
+          "uiID": "poU45wTKf1Qut1XirnOq",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <ResultImageItem
+            gif={
+                        Object {
+                                    "id": "3ohc123V1Dr1nf8lcQ",
+                                    "slug": "dance-cute-bear-3ohc123V1Dr1nf8lcQ",
+                                    "url": "https://media1.giphy.com/media/3ohc123V1Dr1nf8lcQ/giphy.gif",
+                                  }
+            }
+            id="3ohc123V1Dr1nf8lcQ"
+            imageUrl="https://media1.giphy.com/media/3ohc123V1Dr1nf8lcQ/giphy.gif"
+            onClickButton={[Function]}
+            slug="dance-cute-bear-3ohc123V1Dr1nf8lcQ"
+            uiID="poU45wTKf1Qut1XirnOq"
+/>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "0",
+          "nodeType": "function",
+          "props": Object {
+            "gif": Object {
+              "id": "3ohc123V1Dr1nf8lcQ",
+              "slug": "dance-cute-bear-3ohc123V1Dr1nf8lcQ",
+              "url": "https://media1.giphy.com/media/3ohc123V1Dr1nf8lcQ/giphy.gif",
+            },
+            "id": "3ohc123V1Dr1nf8lcQ",
+            "imageUrl": "https://media1.giphy.com/media/3ohc123V1Dr1nf8lcQ/giphy.gif",
+            "onClickButton": [Function],
+            "slug": "dance-cute-bear-3ohc123V1Dr1nf8lcQ",
+            "uiID": "poU45wTKf1Qut1XirnOq",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`ItemListView renders with TrendingImageItem and empty gif object without crashing 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ItemListView
+    ImageItem={[Function]}
+    emptyMessage="empty"
+    gifs={Object {}}
+    onClickButton={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "emptyMessage": "empty",
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "emptyMessage": "empty",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

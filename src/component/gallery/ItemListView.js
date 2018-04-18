@@ -7,6 +7,16 @@ import NoneColumnGapDiv from './presenter/NoneColumnGapDiv';
 import { isObjectEmptyOrUndefined } from '../../helper/object';
 import { generateUiID } from '../../helper/dom';
 
+/**
+ * If gifs object is no empty, iterates over them and renders each gif component
+ * passed as prop by the section component, if there ara no gifs, shows a message. 
+ * @param {*} props
+ * @param {string} emptyMessage if there are no gifs to show, shows this message
+ * @param {object} gifs gifs to show.
+ * @param {component} ImageItem gif type view, passed by the section component.
+ * @param {function} onClickButton method that excecutes an app action such as
+ * add gif to favorites or remove it.
+ */
 const ItemListView = (props) => {
     const { emptyMessage, gifs, ImageItem, onClickButton } = props;
 

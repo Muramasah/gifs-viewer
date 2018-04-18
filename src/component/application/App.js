@@ -1,48 +1,33 @@
 //Libraries
 import React, { Component } from 'react';
 //Components
-import PageHeader from '../component/PageHeader';
-import TrendingSection from '../component/section/TrendingSection';
-import FavoriteSection from '../component/section/FavoriteSection';
-import SearchSection from '../component/section/SearchSection';
+import PageHeader from '../section/PageHeader';
+import TrendingSection from '../section/TrendingSection';
+import FavoriteSection from '../section/FavoriteSection';
+import SearchSection from '../section/SearchSection';
 //Actions
-import { fetchLastTenTreindGifs } from '../action/actions';
+import { fetchLastTreindGifs, fetchLastSearchGifs } from '../../action/actions';
 //Helpers
-import { isArrayEmptyOrUndefined } from '../helper/array';
+import { isArrayEmptyOrUndefined } from '../../helper/array';
 
 class App extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            trending: [],
-            favorites: [],
-            results: [],
+            trending: {},
+            favorites: {},
+            results: {},
             searchValue: ''
         }
     }
 
     componentDidMount() {
-        this.updateTreindingGifs(10);
-    }
-
-    updateTreindingGifs(limit) {
-        fetchLastTenTreindGifs(10)
-            .then(({ payload }) => {
-                this.loadGifs(payload, 'trending')
+        fetchLastTreindGifs(1)
+            .then(({ payload: { gifs } }) => {
+                this.setState({ trending: gifs });
             })
             .catch(console.error);
-    }
-
-    loadGifs(payload, gifType) {
-        if (payload) {
-            const rawGifs = payload.data || [];
-            const gifs = gifType === 'favorites'
-                ? rawGifs
-                : rawGifs.map(this.addFavoriteFlag.bind(this));
-
-            this.setState({ [gifType]: gifs });
-        }
     }
 
     addFavoriteFlag(gif) {
@@ -58,24 +43,42 @@ class App extends Component {
         return gif
     }
 
-    onDislike(event) {
-        const { favorites: oldFavorites } = this.state;
-        const gifID = event.target.id;
-        const favorites = oldFavorites.filter(gif => gif.id !== gifID);
+    onDislike(gif) {
+        let { favorites, results } = this.state;
+        if (results[gif.id]) {
+            results[gif.id].isFavorite = false;
+        }
+        gif.isFavorite = false;
+        delete favorites[gif.id];
 
         this.setState({ favorites });
     }
 
-    onLike(event) {
-        const { favorites: oldFavorites } = this.state;
-        const gifID = event.target.id;
-        const favorites = oldFavorites.filter(gif => gif.id !== gifID);
+    onLike(gif) {
+        const { favorites } = this.state
+
+        gif.isFavorite = true;
+        favorites[gif.id] = gif;
 
         this.setState({ favorites });
     }
 
     onChangeSearchValue(searchValue) {
-        this.setState({ searchValue });
+        fetchLastSearchGifs(searchValue, 10)
+            .then(({ payload: { gifs } }) => {
+                const { favorites } = this.state;
+
+                Object.keys(gifs).forEach((id, index) => {
+                    const favoriteGif = favorites[id];
+
+                    if (favoriteGif) {
+                        gifs[id].isFavorite = true
+                    }
+                })
+
+                this.setState({ results: gifs });
+            })
+            .catch(console.error);
     }
 
     render() {
@@ -98,7 +101,5 @@ class App extends Component {
         );
     }
 }
-
-/**/
 
 export default App;

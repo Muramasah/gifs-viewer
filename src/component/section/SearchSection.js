@@ -3,7 +3,7 @@ import React from 'react';
 //Components
 import SearchField from '../input/SearchField';
 import GifGallery from '../gallery/GifGallery';
-import ResultImageButton from '../gallery/image/ResultImageItem';
+import ResultImageButton from '../image/ResultImageItem';
 
 /**
  * SearchSection

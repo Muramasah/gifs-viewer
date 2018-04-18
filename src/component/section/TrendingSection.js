@@ -2,7 +2,7 @@
 import React from 'react';
 //Components
 import GifGallery from '../gallery/GifGallery';
-import TrendingImageItem from '../gallery/image/TrendingImageItem'
+import TrendingImageItem from '../image/TrendingImageItem'
 
 /**
  * TrendingGifGallery

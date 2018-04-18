@@ -9,13 +9,17 @@ import { generateUiID } from '../../helper/dom';
 
 /**
  * If gifs object is no empty, iterates over them and renders each gif component
- * passed as prop by the section component, if there ara no gifs, shows a message. 
+ * passed as prop by the section component, also generates an interface ID for
+ * each gif. If there ara no gifs, shows a message.
+ *  
  * @param {*} props
  * @param {string} emptyMessage if there are no gifs to show, shows this message
  * @param {object} gifs gifs to show.
  * @param {component} ImageItem gif type view, passed by the section component.
  * @param {function} onClickButton method that excecutes an app action such as
  * add gif to favorites or remove it.
+ * @returns {component} Returns EmptyGallery Component if there are no gifs or
+ * a NonColumnGapDiv presenter component if are gifs to show.
  */
 const ItemListView = (props) => {
     const { emptyMessage, gifs, ImageItem, onClickButton } = props;
